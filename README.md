@@ -1,4 +1,4 @@
-# calorisync.app
+# calorisync.com
 
 Marketing site, Terms of Service, and Privacy Policy for the CaloriSync iOS app.
 Built as plain HTML/CSS/JS and served by GitHub Pages.
@@ -21,13 +21,13 @@ with an `index.html`.
 2. **Repo Settings → Pages** → Source: `main` branch, `/` (root). Save.
 3. Wait ~1 minute, then verify the site at
    `https://valoroid-technologies.github.io/calorisync-website/`.
-4. Point DNS for `calorisync.app` (apex):
+4. Point DNS for `calorisync.com` (apex):
    - `A` records → `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`
    - `AAAA` records → `2606:50c0:8000::153`, `2606:50c0:8001::153`, `2606:50c0:8002::153`, `2606:50c0:8003::153`
-   - Optionally `CNAME` `www.calorisync.app` → `valoroid-technologies.github.io`
+   - Optionally `CNAME` `www.calorisync.com` → `valoroid-technologies.github.io`
 5. GitHub Pages auto-issues a Let's Encrypt cert once DNS resolves. Enable
    **Enforce HTTPS** in Pages settings.
-6. Verify both `https://calorisync.app/terms` and `https://calorisync.app/privacy`
+6. Verify both `https://calorisync.com/terms` and `https://calorisync.com/privacy`
    return `200` — these are the URLs `TermsSheet.swift` opens during Apple Review.
 
 ## File map
@@ -40,14 +40,14 @@ privacy/index.html      Served at /privacy
 css/main.css            All styles
 js/main.js              Mobile nav + FAQ accordion
 assets/                 Logo, app icon, favicons, OG image, screenshots
-CNAME                   calorisync.app (custom-domain marker for GH Pages)
+CNAME                   calorisync.com (custom-domain marker for GH Pages)
 robots.txt, sitemap.xml SEO basics
 ```
 
 ## Outstanding TODOs before launch
 
 - [ ] Generate a real `og-image.png` (1200×630) — the social preview.
-- [ ] Confirm `support@calorisync.app` mailbox / forwarding is live.
+- [ ] Confirm `support@calorisync.com` mailbox / forwarding is live.
 - [ ] Confirm Google Cloud Run region in the Privacy Policy is correct.
 - [ ] Have Indian legal counsel review Terms + Privacy before scaling.
 - [ ] Replace the inline Apple/Google badge SVGs with the official assets from
