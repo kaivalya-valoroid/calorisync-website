@@ -95,4 +95,45 @@
       targets.forEach(function (t) { sectionObs.observe(t); });
     }
   }
+
+  // Legal pages: TOC scroll-spy
+  if ("IntersectionObserver" in window) {
+    const tocLinks = Array.prototype.slice.call(document.querySelectorAll(".toc-list a[href^='#']"));
+    const tocTargets = tocLinks
+      .map(function (a) { return document.querySelector(a.getAttribute("href")); })
+      .filter(Boolean);
+    if (tocTargets.length) {
+      const tocObs = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            tocLinks.forEach(function (a) { a.classList.remove("is-active"); });
+            const link = tocLinks.find(function (a) {
+              return a.getAttribute("href") === "#" + entry.target.id;
+            });
+            if (link) link.classList.add("is-active");
+          }
+        });
+      }, { rootMargin: "-30% 0px -60% 0px", threshold: 0 });
+      tocTargets.forEach(function (t) { tocObs.observe(t); });
+    }
+  }
+
+  // Back-to-top button: fade in after 320px scroll
+  const backBtn = document.getElementById("backToTop");
+  if (backBtn) {
+    let ticking = false;
+    const onScroll = function () {
+      if (!ticking) {
+        requestAnimationFrame(function () {
+          backBtn.classList.toggle("is-visible", window.scrollY > 320);
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    backBtn.addEventListener("click", function () {
+      window.scrollTo({ top: 0, behavior: prefersReduced ? "auto" : "smooth" });
+    });
+  }
 })();
