@@ -269,6 +269,90 @@ h1, h2, h3 { color: var(--ink); letter-spacing: -0.015em; }
   margin: 0;
 }
 
+/* ---------- Reality band (dark, hard-hitting stat) ---------- */
+.reality {
+  background: var(--ink);
+  color: #fff;
+  padding: 64px 0;
+}
+.reality-inner {
+  max-width: 820px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 0 24px;
+}
+.reality .tag {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--brand-warn);
+  margin-bottom: 18px;
+}
+.reality h2 {
+  color: #fff;
+  font-size: clamp(26px, 3.4vw, 38px);
+  line-height: 1.15;
+  font-weight: 700;
+  margin: 0 0 18px;
+  letter-spacing: -0.015em;
+}
+.reality h2 .underline {
+  background: linear-gradient(180deg, transparent 60%, rgba(217, 119, 6, 0.35) 60%);
+  padding: 0 4px;
+}
+.reality p {
+  color: rgba(255,255,255,0.7);
+  font-size: 17px;
+  margin: 0 auto 8px;
+  max-width: 640px;
+}
+.reality .source {
+  color: rgba(255,255,255,0.4);
+  font-size: 12px;
+  margin-top: 18px;
+}
+
+/* ---------- Why-they-quit grid ---------- */
+.objection-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  max-width: 920px;
+  margin: 0 auto;
+}
+.objection {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-card);
+  padding: 24px 22px;
+}
+.objection .past {
+  display: block;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  margin-bottom: 6px;
+}
+.objection h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0 0 10px;
+  color: var(--ink);
+  text-decoration: line-through;
+  text-decoration-color: var(--brand-rose);
+  text-decoration-thickness: 2px;
+}
+.objection .answer {
+  font-size: 15px;
+  color: var(--ink-2);
+  margin: 0;
+}
+.objection .answer strong { color: var(--brand-primary); }
+
 /* ---------- Trust strip ---------- */
 .trust {
   padding: 32px 0;
@@ -645,9 +729,11 @@ h1, h2, h3 { color: var(--ink); letter-spacing: -0.015em; }
   .features-grid { grid-template-columns: repeat(2, 1fr); }
   .steps { grid-template-columns: 1fr; gap: 16px; }
   .pricing-grid { grid-template-columns: 1fr; }
+  .objection-grid { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr 1fr; gap: 24px; }
   .footer-brand { grid-column: 1 / -1; }
   .section { padding: 64px 0; }
+  .reality { padding: 48px 0; }
 }
 
 @media (max-width: 640px) {
